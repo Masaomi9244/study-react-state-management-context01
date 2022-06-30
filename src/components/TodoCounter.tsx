@@ -1,9 +1,7 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
+import { TodoContext } from "src/pages/_app";
 
-type Props = {
-  todoCounter: number;
-};
-
-export const ToDoCounter: FC<Props> = ({ todoCounter }) => {
-  return <h2>TODO: {todoCounter}件</h2>;
+export const ToDoCounter: FC = () => {
+  const { todos } = useContext(TodoContext);
+  return <h2>TODO: {todos.length}件</h2>;
 };
